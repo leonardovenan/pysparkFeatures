@@ -3,4 +3,4 @@ df = spark.read\
 .option("uri", "mongodb+srv://user:password@cluster/database")\
 .option("database", "database")\
 .option("collection", "collection")\
-.load()
+.load() 
