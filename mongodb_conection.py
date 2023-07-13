@@ -4,3 +4,5 @@ df = spark.read\
 .option("database", "database")\
 .option("collection", "collection")\
 .load() 
+
+df.columns
