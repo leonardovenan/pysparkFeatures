@@ -1,0 +1,19 @@
+options = {
+    "sfUrl": "https://cluster.localidade.cliente.snowflakecomputing.com",
+    "sfUser": "leonardovenan",
+    "sfPassword": "pass",
+    "sfDatabase": "DATALAKE",
+    "sfSchema": "schema",
+    "sfWarehouse": "MB_WH_XSMALL"
+}
+
+df = spark.sql("select * from table")
+
+(df_assessors
+    .write
+    .format('snowflake')
+    .options(**options)
+    .option("dbtable", "tbTable")
+    .mode('overwrite')
+    .save()
+)
